@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="Vigeo.Controls.ChatRightMessageItemTemplate" xmlns:local="clr-namespace:Vigeo"
+		xmlns:controls="clr-namespace:Vigeo.Controls" Padding="20,5">
+	<Grid ColumnSpacing="3" RowSpacing="0" VerticalOptions="StartAndExpand">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="40" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="40" />
+		</Grid.RowDefinitions>
+		<!-- LEFT TRIANGLE -->
+		<!--<Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"
+				TranslationY="12" Rotation="180" Text="&#xf0d7;" TextColor="{x:Static local:Constants.MessageType1Color}"
+				Style="{StaticResource FontIcon}" HorizontalOptions="Start" FontSize="30" />-->
+		<!-- BALLOON BACKGROUND -->
+		<StackLayout BackgroundColor="{x:Static local:Constants.MessageType2Color}" Grid.Row="0" Grid.Column="0"
+				Padding="10" HorizontalOptions="FillAndExpand">
+			<controls:MediaPreview MediaFile="{Binding Attachment.File}" VerticalOptions="StartAndExpand"/>
+			<Label TextColor="#FFFFFF" FontSize="18" Text="{Binding Message}" />
+		</StackLayout>
+		<Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"
+			TranslationX="12" TranslationY="10" Text="" />
+		<!-- BY -->
+		<controls:CircleImage Grid.Row="1" Grid.Column="1"
+				VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+				Source="{Binding From.Avatar, Converter={StaticResource userAvatarConverter}}"
+				BorderColor="{x:Static local:Constants.MessageType2Color}"
+				BorderThickness="1"/>
+		<Label Grid.Row="1" Grid.Column="0" HorizontalOptions="EndAndExpand"
+				TranslationX="-10"
+				VerticalOptions="FillAndExpand"
+				VerticalTextAlignment="Center"
+			 	FontSize="16" TextColor="Gray" Text="{Binding From.Name}" />
+    	<Label
+			Grid.Row="1" Grid.Column="0"
+			HorizontalOptions="StartAndExpand"
+			VerticalOptions="FillAndExpand"
+			FontSize ="12"
+			TextColor="Gray"
+			HorizontalTextAlignment="Start"
+			VerticalTextAlignment="Center"
+			Text="{Binding When, Converter={StaticResource dateToWhenConverter}}" />
+	</Grid>
+</ContentView>

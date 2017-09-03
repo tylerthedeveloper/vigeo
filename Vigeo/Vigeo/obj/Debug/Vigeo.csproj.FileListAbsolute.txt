@@ -1,0 +1,15 @@
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.csproj.App.config
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.csprojResolveAssemblyReference.cache
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Resources.Strings.LocalizedStrings.resources
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.csproj.GenerateResource.Cache
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Messages.Templates.ChatLeftMessageItemTemplate.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Messages.Templates.ChatRightMessageItemTemplate.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Controls.ChatBubbleItemView.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Controls.ChatBubbleView.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Controls.ChatLeftMessageItemTemplate.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Controls.ChatMessagesTupleHeaderView.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Controls.ChatRightMessageItemTemplate.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Views.ChatMessagesList.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Chat.Controls.ChatBubbleItemWithMediaView.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Pages.TaskList.xaml.g.cs
+C:\Users\tylercitrin\Desktop\app\Vigeo\Vigeo\obj\Debug\Vigeo.Pages.TaskDetail.xaml.g.cs

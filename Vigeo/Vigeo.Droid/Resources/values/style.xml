@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="VigeoTheme" parent="@style/VigeoTheme.Base"/>
+
+  <style name="VigeoTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primaryDark</item>
+    <item name="colorAccent">@color/primary</item>
+    <item name="android:windowBackground">@color/window_background</item>
+   <!-- <item name="actionMenuTextColor">@color/white</item>-->
+    <item name="textAllCaps">false</item>
+    <item name="windowActionModeOverlay">true</item>
+
+  </style>
+
+</resources>

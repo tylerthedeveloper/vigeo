@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="UXDivers.Artina.Grial.ChatLeftMessageItemTemplate"
+  xmlns:controls="clr-namespace:Vigeo.Controls"
+  xmlns:App="clr-namespace:Vigeo">
+
+
+  <Grid
+		ColumnSpacing="3"
+		RowSpacing="0"
+		VerticalOptions="StartAndExpand"
+		Padding="0,0,0,20"
+		>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+
+    </Grid.RowDefinitions>
+
+    <!-- LEFT TRIANGLE 
+    <Label
+			Grid.Row="0" Grid.Column="1"
+			HorizontalTextAlignment="Start"
+			VerticalTextAlignment="Start"
+			TranslationY="12"
+      Rotation="180"
+			Text="&#xf0d7;"
+			TextColor="{Binding Source={x:Static App:ColorResources.CaliforniaOrange}}"
+			Style="{StaticResource FontIcon}"
+      HorizontalOptions="Start"
+			FontSize="30"/>
+      -->
+
+    <!-- BALLOON BACKGROUND -->
+    <StackLayout
+			BackgroundColor="{Binding Source={x:Static App:ColorResources.CaliforniaOrange}}"
+      
+			Grid.Row="1" Grid.Column="1"
+      
+			Padding="10"
+			VerticalOptions="EndAndExpand"
+      HorizontalOptions="Start">
+
+      <Label
+				TextColor="#FFFFFF"
+				FontSize="18"
+				Text="{ Binding text }"
+			/>
+    </StackLayout>
+
+    <Label
+             Grid.Row="0" Grid.Column="0"
+             HorizontalOptions="Start"
+             VerticalOptions="CenterAndExpand"
+             TranslationX="12"
+             TranslationY="10"
+             Text=""
+		/>
+
+    <!-- BY -->
+    <StackLayout
+			Grid.Row="0" Grid.Column="1"
+      Orientation="Horizontal"
+			VerticalOptions="EndAndExpand"
+      HorizontalOptions="Start">
+
+      <controls:CircleImage Grid.Row="0" Grid.Column="2"
+                            TranslationX="3" TranslationY="-5"
+                                    Source="{ Binding picture }"
+                                    HeightRequest="35" WidthRequest="35"
+                                    BorderThickness="1"
+                                    BorderColor="Color.Black"/>
+      <Label
+Grid.Row="0" Grid.Column="1"
+HorizontalOptions="Start"
+VerticalOptions="CenterAndExpand"
+TranslationX="3"
+TranslationY="-5"
+FontSize ="15"
+  TextColor="Black"
+  Text="{ Binding fullName }"
+		/>
+    </StackLayout>
+
+
+
+    <!-- WHEN 
+    <Label
+			Grid.Row="1" Grid.Column="1"
+			HorizontalOptions="Start"
+			VerticalOptions="CenterAndExpand"
+			TranslationX="10"
+			TranslationY="10"
+			FontSize ="12"
+			TextColor="{ Binding Color.White }"
+			HorizontalTextAlignment="End"
+			VerticalTextAlignment="Center"
+			Text="{ Binding when }" 
+		/>-->
+
+
+  </Grid>
+</ContentView>

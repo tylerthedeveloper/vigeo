@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="Vigeo.Controls.ChatBubbleItemWithMediaView"
+		xmlns:controls="clr-namespace:Vigeo.Controls"
+		xmlns:local="clr-namespace:Vigeo">
+  <ContentView.Content>
+    <StackLayout Padding="10" HorizontalOptions="FillAndExpand">
+      <controls:MediaPreview MediaFile="{Binding Attachment.File}" VerticalOptions="StartAndExpand"/>
+      <StackLayout Orientation="Horizontal">
+        <Label TextColor="#FFFFFF" FontSize="18" Text="{Binding Message}" HorizontalOptions="FillAndExpand" />
+        <Label
+          HorizontalOptions="EndAndExpand"
+          FontSize ="12"
+          TextColor="#FFFFFF"
+          HorizontalTextAlignment="Start"
+          VerticalTextAlignment="Center"
+          Text="{Binding When, Converter={StaticResource dateToWhenConverter}}" />
+      </StackLayout>
+    </StackLayout>
+  </ContentView.Content>
+</ContentView>

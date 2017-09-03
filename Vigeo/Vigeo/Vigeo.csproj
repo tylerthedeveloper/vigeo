@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85728A4D-F308-498B-B10E-6A15DCF07802}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vigeo</RootNamespace>
+    <AssemblyName>Vigeo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Abstractions\BaseViewModel.cs" />
+    <Compile Include="Abstractions\ICloudService.cs" />
+    <Compile Include="Abstractions\ICloudTable.cs" />
+    <Compile Include="Abstractions\ILoginProvider.cs" />
+    <Compile Include="Abstractions\TableData.cs" />
+    <Compile Include="Chat\Controls\ChatBubbleItemView.xaml.cs">
+      <DependentUpon>ChatBubbleItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\Controls\ChatBubbleItemWithMediaView.xaml.cs">
+      <DependentUpon>ChatBubbleItemWithMediaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\Controls\ChatBubbleView.xaml.cs">
+      <DependentUpon>ChatBubbleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\Controls\ChatInput.cs" />
+    <Compile Include="Chat\Controls\ChatLeftMessageItemTemplate.xaml.cs">
+      <DependentUpon>ChatLeftMessageItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\Controls\ChatListView.cs" />
+    <Compile Include="Chat\Controls\ChatMessagesTupleHeaderView.xaml.cs">
+      <DependentUpon>ChatMessagesTupleHeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\Controls\ChatRightMessageItemTemplate.xaml.cs">
+      <DependentUpon>ChatRightMessageItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\Controls\CircleImage.cs" />
+    <Compile Include="Chat\Controls\EntryTextVIew.cs" />
+    <Compile Include="Chat\Controls\MediaPreview.cs" />
+    <Compile Include="Chat\Extensions\MediaFileExtensions.cs" />
+    <Compile Include="Chat\Resources\Strings\LocalizedStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizedStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\TemplateSelectors\ChatMessageTemplateSelector.cs" />
+    <Compile Include="Chat\ViewModels\BaseViewModel.cs" />
+    <Compile Include="Chat\ViewModels\BindableObject.cs" />
+    <Compile Include="Chat\ViewModels\ChatViewModel.cs" />
+    <Compile Include="Chat\Views\ChatMessagesList.xaml.cs">
+      <DependentUpon>ChatMessagesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AttendingScroll.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\CustomViews.cs" />
+    <Compile Include="Common\FacebookLoginButton.cs" />
+    <Compile Include="Common\MyCircleIcon.cs" />
+    <Compile Include="Dependencies\ITools.cs" />
+    <Compile Include="Helpers\JsonDownload.cs" />
+    <Compile Include="Helpers\Locations.cs" />
+    <Compile Include="Helpers\RealmDBService.cs" />
+    <Compile Include="Chat\Messages\BaseMessage.cs" />
+    <Compile Include="Chat\Messages\ScrollMessage.cs" />
+    <Compile Include="Chat\Messages\ScrollToBottomMessage.cs" />
+    <Compile Include="Chat\Models\ChatRoomModel.cs" />
+    <Compile Include="Chat\Models\MediaFile.cs" />
+    <Compile Include="Chat\Models\MessageAttachmentModel.cs" />
+    <Compile Include="Chat\Models\MessageModel.cs" />
+    <Compile Include="Chat\Models\MessageTupleModel.cs" />
+    <Compile Include="Helpers\ServiceLocator.cs" />
+    <Compile Include="Models\Attending.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\EventChat.cs" />
+    <Compile Include="Models\MediaFileModel.cs" />
+    <Compile Include="Models\MessageModel.cs" />
+    <Compile Include="Models\TodoItem.cs" />
+    <Compile Include="Pages\AccountSettings.cs" />
+    <Compile Include="Pages\ChatPage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\MomentsPage.cs" />
+    <Compile Include="Pages\TaskDetail.xaml.cs">
+      <DependentUpon>TaskDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TaskList.xaml.cs">
+      <DependentUpon>TaskList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AzureCloudService.cs" />
+    <Compile Include="Services\AzureCloudTable.cs" />
+    <Compile Include="Templates\MomentTemplate.cs" />
+    <Compile Include="Templates\SettingsTemplate.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Pages\DetailPage.cs" />
+    <Compile Include="Pages\LaunchPage.cs" />
+    <Compile Include="Helpers\GeoCodeCalc.cs" />
+    <Compile Include="Chat\Messages\Templates\ChatLeftMessageItemTemplate.xaml.cs" />
+    <Compile Include="Chat\Messages\Templates\ChatRightMessageItemTemplate.xaml.cs" />
+    <Compile Include="Models\AllEventsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\EventTemplate.cs" />
+    <Compile Include="ViewModels\EventsViewModel.cs" />
+    <Compile Include="Pages\EventPage.cs" />
+    <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="Helpers\GPS.cs" />
+    <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\MessagesViewModel.cs" />
+    <Compile Include="ViewModels\TaskDetailViewModel.cs" />
+    <Compile Include="ViewModels\TaskListViewModel.cs" />
+    <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="ViewModels\EventsViewModel2.cs" />
+    <Compile Include="Pages\EventList.xaml.cs">
+      <DependentUpon>EventList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AllEventsModel2.cs" />
+    <Compile Include="Models\Venue.cs" />
+    <Compile Include="Services\City.cs" />
+    <Compile Include="Services\Geo.cs" />
+    <Compile Include="Services\Query.cs" />
+    <Compile Include="Services\OfflineUserManager.cs" />
+    <Compile Include="Pages\EventPage2.cs" />
+    <Compile Include="Templates\EventTemplate2.cs" />
+    <Compile Include="Pages\DetailPage2.cs" />
+    <Compile Include="Templates\MomentTemplate2.cs" />
+    <Compile Include="Pages\ChatPage2.cs" />
+    <Compile Include="Pages\MainPage2.cs" />
+    <Compile Include="Pages\MomentsPage2.cs" />
+    <Compile Include="Pages\FacebookLoginPage.cs" />
+    <Compile Include="Pages\EntryPage.cs">
+      <DependentUpon>EntryPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Acr.DeviceInfo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Acr.DeviceInfo.4.0.2\lib\portable-win+net45+wp8+win8+wpa81\Acr.DeviceInfo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Acr.DeviceInfo.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Acr.DeviceInfo.4.0.2\lib\portable-win+net45+wp8+win8+wpa81\Acr.DeviceInfo.Interface.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Badge.Plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Xam.Plugin.Badge.1.0.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Badge.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Badge.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Xam.Plugin.Badge.1.0.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Badge.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetCross.Memory.Unsafe, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetCross.Memory.Unsafe.0.2.3.4\lib\netstandard1.0\DotNetCross.Memory.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Client.2.1.1\lib\portable-win+net45+wp8+wpa81+monotouch+monoandroid\Microsoft.WindowsAzure.Mobile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile.SQLiteStore, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Client.SQLiteStore.3.0.0-beta\lib\portable-win+net45+wp8+wpa81+monotouch+monoandroid+xamarinios10\Microsoft.WindowsAzure.Mobile.SQLiteStore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Polly, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Polly.4.3.0\lib\portable-net45+netcore45+wpa81+wp8\Polly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Realm, Version=0.77.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Realm.0.77.2\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Splat, Version=1.6.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Splat.1.6.2\lib\Portable-net45+win+wpa81+wp80\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=0.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.0.0-pre20160901085507\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.core.1.0.0-pre20160901085507\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Xam.Plugin.ExternalMaps.3.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.ExternalMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ExternalMaps.Abstractions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Xam.Plugin.ExternalMaps.3.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.ExternalMaps.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions, Version=3.0.4.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=1.1.6.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Plugin.Permissions.1.1.7\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=1.1.6.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Plugin.Permissions.1.1.7\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Vibrate, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Xam.Plugins.Vibrate.2.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Vibrate.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Vibrate.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Xam.Plugins.Vibrate.2.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Vibrate.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rx-Core.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rx-Interfaces.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rx-Linq.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rx-PlatformServices.2.3\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UXDivers.Artina.Shared">
+      <HintPath>..\..\lib\pcl\UXDivers.Artina.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation, Version=2.3.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Validation.2.3.7\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.3.1.114\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Theme.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.Theme.Base.1.0.0.43-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Theme.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Insights, Version=1.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Insights.1.12.3\lib\portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10\Xamarin.Insights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.UITest, Version=1.3.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.UITest.1.3.15\lib\Xamarin.UITest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Core, Version=2.0.5782.12218, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Core.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Forms, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Forms.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Ioc, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.IoC.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Ioc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Platform, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Platform.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XLabs.Serialization, Version=2.0.5782.15703, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Serialization.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics">
+      <HintPath>..\..\packages\Microsoft.WindowsAzure.SDK.2.9.0\lib\Microsoft.WindowsAzure.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime">
+      <HintPath>..\..\packages\Microsoft.WindowsAzure.SDK.2.9.0\lib\Microsoft.WindowsAzure.ServiceRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsAzureEventSource">
+      <HintPath>..\..\packages\Microsoft.WindowsAzure.SDK.2.9.0\lib\WindowsAzureEventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsAzureTelemetryEvents">
+      <HintPath>..\..\packages\Microsoft.WindowsAzure.SDK.2.9.0\lib\WindowsAzureTelemetryEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="HockeySDK">
+      <HintPath>..\..\packages\HockeySDK.Xamarin.4.1.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Pages">
+      <HintPath>..\..\packages\Xamarin.Forms.Pages.2.3.2.118-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Pages.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.1.8.0.5\lib\portable-net45+wp80+win8+wpa81\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chat\Messages\Templates\ChatLeftMessageItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\Messages\Templates\ChatRightMessageItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\Resources\Strings\LocalizedStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizedStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\EventList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\EntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chat\Controls\ChatBubbleItemView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\Controls\ChatBubbleView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\Controls\ChatLeftMessageItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\Controls\ChatMessagesTupleHeaderView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\Controls\ChatRightMessageItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat\Views\ChatMessagesList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chat\Controls\ChatBubbleItemWithMediaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TaskList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TaskDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\New Folder\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Insights.1.12.3\build\portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10\Xamarin.Insights.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Insights.1.12.3\build\portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10\Xamarin.Insights.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Realm.0.77.2\build\Realm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Realm.0.77.2\build\Realm.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!--<Import Project="..\..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets')" /> -->
+  <Import Project="..\..\packages\Xamarin.Insights.1.12.3\build\portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10\Xamarin.Insights.targets" Condition="Exists('..\..\packages\Xamarin.Insights.1.12.3\build\portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10\Xamarin.Insights.targets')" />
+  <!--<Import Project="..\..\packages\Realm.0.77.2\build\Realm.targets" Condition="Exists('..\..\packages\Realm.0.77.2\build\Realm.targets')" /> -->
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+</Project>

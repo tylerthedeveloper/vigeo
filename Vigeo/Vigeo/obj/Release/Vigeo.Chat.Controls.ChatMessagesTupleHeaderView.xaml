@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="Vigeo.Controls.ChatMessagesTupleHeaderView"
+		xmlns:controls="clr-namespace:Vigeo.Controls"
+		xmlns:local="clr-namespace:Vigeo"
+		Padding="20,5">
+	<ContentView.Content>
+		<Grid ColumnSpacing="3" RowSpacing="0" VerticalOptions="StartAndExpand">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="40" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<controls:CircleImage Grid.Row="0" Grid.Column="0"
+					VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+					Source="{Binding From.Avatar, Converter={StaticResource userAvatarConverter}}"
+					BorderColor="{x:Static local:Constants.MessageTypeColor}"
+					BorderThickness="1"/>
+			<Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Start"
+					TranslationX="10"
+					VerticalOptions="FillAndExpand"
+					VerticalTextAlignment="Center"
+				 	FontSize="16" TextColor="Gray" Text="{Binding From.Name}" />
+		</Grid>
+	</ContentView.Content>
+</ContentView>

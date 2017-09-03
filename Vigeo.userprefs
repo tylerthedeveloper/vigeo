@@ -1,0 +1,10 @@
+﻿<Properties StartupConfiguration="{A92A09B3-D3CF-4679-AD1D-4112C539AE7D}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Vigeo.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B1134A5D-7504-4D0A-8FEC-FF904AFF0D05" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.VigBE PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

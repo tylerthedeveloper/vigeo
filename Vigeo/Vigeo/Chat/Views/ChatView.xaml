@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="Vigeo.Views.ChatView"
+		xmlns:local="clr-namespace:Vigeo"
+		xmlns:vm="clr-namespace:Vigeo.ViewModels"
+		xmlns:controls="clr-namespace:Vigeo.Controls"
+		Title="Samanta">
+	<ContentPage.BindingContext>
+		<vm:ChatViewModel/>
+	</ContentPage.BindingContext>
+	<StackLayout Spacing="0">
+		<controls:ChatListView x:Name="_list" ItemsSource="{Binding MessageGroups}" VerticalOptions="FillAndExpand"/>
+    <controls:ChatInput SendCommand="{Binding SendMessageCommand}"/>
+	</StackLayout>
+</ContentPage>

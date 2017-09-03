@@ -1,0 +1,26 @@
+{
+  "schema": "https://schemas.xenforms.com/xenproject/v1/",
+  "assemblies": [
+    {
+      "include": true,
+      "relativePath": "\\Vigeo.Droid\\bin\\Debug\\Vigeo.dll"
+    },
+    {
+      "include": true,
+      "relativePath": "\\Vigeo.Droid\\bin\\Debug\\Vigeo.Droid.dll"
+    },
+    {
+      "include": true,
+      "relativePath": "\\Vigeo\\bin\\Debug\\Vigeo.dll"
+    },
+    {
+      "include": true,
+      "relativePath": "\\lib\\android\\UXDivers.Artina.Shared.Droid.dll"
+    },
+    {
+      "include": true,
+      "relativePath": "\\lib\\pcl\\UXDivers.Artina.Shared.dll"
+    }
+  ],
+  "views": null
+}
