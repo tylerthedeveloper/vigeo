@@ -1,0 +1,241 @@
+http://alvinalexander.com/web/using-curl-scripts-to-test-restful-web-services
+http://conqueringthecommandline.com/book/curl
+
+-i : Information
+
+-x: send parameter in url
+
+-d: send JSOn
+
+-H:  headers
+
+curl -i -H "Content-Type: application/json" -X POST -d '{"message":"hi bud"}' http://localhost:5000/api/users/1/messages/2
+
+curl -i -H "Content-Type: application/json" -X POST -d '{"message":"hi bud"}' vigeo.io/api/user/1/messages
+
+curl -i -H "Content-Type: application/json" -X POST -d ‘{“name”:”watavea”}’ http://localhost:5000/api/events
+
+
+
+
+
+curl -i -H "Content-Type: application/json" -X POST -d ‘{“fb_id”:”fb_id”}’ http://localhost:5000/v1/login
+
+
+$ curl -X POST "quiet-waters-1228.herokuapp.com/echo?fname=Mark&lname=Bates"
+
+$ curl -X POST -d "fname=Mark&lname=Bates" quiet-waters-1228.herokuapp.com/echo
+
+$ curl -X POST -d "{\"name\":\"Mark\"}" quiet-waters-1228.herokuapp.com/echo
+
+$ curl -X POST -d "{"fb_id":"fb_id"}" http://localhost:5000/v1/login -H "Accept: application/json"
+
+$ curl -i -X POST -d "{"fb_id":"fb_id"}" http://localhost:5000/v1/login \
+  -H "Accept: application/json"
+
+
+
+curl \
+--header "Content-type: application/json" \
+--request POST \
+--data '{"fb_id":"fb_id", "id": "id", "full_name":"full_name" , \
+	"email":"email", "age":"age", "created_on":"created_on", \
+	"last_login":"last_login", "token_type":"token_type", \
+	"interests":"interests", "friends":"friends", \
+	"profile_picture":"profile_picture", "location":"location"}' \
+http://localhost:5000/v1/login
+
+curl -i -H "Content-type: application/json" \
+-X POST http://localhost:5000/v1/login -d '{"fb_id":"fb_id", "id": "id", \ "full_name":"full_name"}'
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"access_token", "full_name": "full_name", "email" : "email5", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":"interests", "friends":"friends", "profile_picture":"profile_picture", "location":"location"}'
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"access_token", "token_type":"token_type", \
+"full_name": "full_name", "email" : "email4", "age":"age", "created_on":"created_on", \ "last_login":"last_login", "interests":"interests", "friends":"friends", \ "profile_picture":"profile_picture", "location":"location"}'
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"access_token", "full_name": "full_name", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":"interests", "friends":"friends", "profile_picture":"profile_picture", "location":"location", "email" : "email8”}'
+
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"access_token", "full_name": "full_name", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":"interests", "friends":["friends"], "profile_picture":"profile_picture", "location":"location", "email" : "email23", "first_name": "first_name"}'
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"access_token", "full_name": "full_name", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":"interests", "friends":["friends"], "profile_picture":"profile_picture", "location":"location", "email" : "email23", "first_name": "first_name"}'
+
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"access_token", "full_name": "full_name", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":"interests", "friends": ["friend1","friend1"], "profile_picture":"profile_picture", "location":(5, 5), "email" : null, "first_name": "first_name", "last_name": "last_name", "age_range":20, "gender":"gender"}'
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"nowfinal", "full_name": "full_name", "token_type":"token_type",
+"interests":["interests1","interests2"], "friends": ["friend1","friend1"], "profile_picture":"profile_picture", "email" : null, "first_name": "first_name", "last_name": "last_name", "age":20, "gender":"gender"}'
+
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"access_token", "full_name": "full_name", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":"interests", "friends": ["friend1","friend1"], "profile_picture":"profile_picture", "email" : null, "first_name": "first_name", "last_name": "last_name", "age_range":20, "gender":"gender"}'
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"access_token", "full_name": "full_name", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":"interests", "friends": ["friend1","friend1"], "profile_picture":"profile_picture", "email" : null, "first_name": "first_name", "last_name": "last_name", "age_range":20, "gender":"gender", "location":{"type":"Point","coordinates":[-73.20266100000001,45.573647]} }'
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"need attendin", "full_name": "full_name", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":["interests0","interests1"], "friends": ["friend1","friend1"], "profile_picture":"profile_picture", "email" : null, "first_name": "first_name", "last_name": "last_name", "age_range":20, "gender":"gender" }'
+
+
+curl -i -H "Content-type: application/json" -X POST https://api.vigeo.io/v1/login -d \ '{"fb_id":"fb_id2", "access_token":"accesssss_token", "full_name": "full_name", "age":"age", "created_on":"created_on", "last_login":"last_login", "token_type":"token_type",
+"interests":["interests1", "interests1"], "friends": ["friend1","friend1"], "profile_picture":"profile_picture", "email" : null, "first_name": "newer", "last_name": "last_name", "age_range":20, "gender":"gender", "location": {"lat" : -118.15, "lon" : 33.80}  }'
+
+curl -i -H "Content-type: application/json" GET http://localhost:5000/v1/users/3/settings
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/users/3/settings -d '{"email":"sett", "age": null, "token_type":"token_type"}'
+
+		user.email = request.json.get('email')
+		user.age = age
+		user.public_profile = public_profile
+		user.push_notifications = push_notifications
+		
+
+
+@ECHO OFF
+39.1653
+-86.5264
+The urllib.urlencode() function is now urllib.parse.urlencode(), 
+and the urllib.urlopen() function is now urllib.request.urlopen().
+
+curl -v -X POST "https://api.allevents.in/events/geo/?latitude={39.1653}&longitude={86.5264}
+
+curl -i -H "Content-type: application/json" -X POST http://localhost:5000/v1/test -d \
+'{"latitude": 39.1653, "longitude" : -86.5264, "radius": 10, "page": 50 }'
+
+
+
+curl -v -X POST "https://api.allevents.in/events/geo/?latitude={39.1653}&longitude={-86.5264}&radius={10}?page={50}" \
+-H "Ocp-Apim-Subscription-Key: 0c774ac5608d46a9a67949b7984e3be8" \
+--data-ascii "{body}"
+
+
+
+√√√
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/test -d \
+'{"latitude": 39.1653, "longitude" : -86.5264, "radius": 1}'
+
+√√√
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/test/search -d \
+'{"query" : "bluebird", "city" : "Bloomington", "latitude": 39.1653, "longitude" : -86.5264}'
+
+√√√
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/test/city/category -d \
+'{"city" : "bloomington", "state" : "IN", "startdate" : "07/15/2016", "enddate" : "07/16/2016"}'
+
+
+√√√
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/test/city -d \
+'{"city" : "bloomington", "state" : "IN", "startdate" : "07/15/2016", "enddate" : "07/16/2016”, "category" : "Sports"}'
+
+
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/test/1 -d '{"user_id": 1}'
+
+
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/test/1 -d '{"user_id": 1}'
+
+
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/test/1 -g -d \
+'{"user" : [{"id": "id", "name": "nrrrrrrs", "picture": "picture"}], "id": 1 }'
+
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/api/v1/event/12 -g -d '{"user" : {"id": "id", "name": "nrrrrrrs", "picture": "new" } }'
+
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/test/25 -g -d '{"user" : {"id": "id", "name": "jmeeee", "picture": "picture"}, 
+"title":"actual", "event_id" : 2, "start_time" : "07/15/2016 7:00", "end_time" : "07/15/2016 9:00", 
+"event_url" : "event_url", "share_url" : "share_url", "owner_id" : "owner_id", 
+"cover_image" : "cover_image", "location": "location", "venue": {
+        "city": "Bloomington",
+        "country": "United States",
+        "full_address": "The Bluebird, 216 N Walnut St, Bloomington, United States",
+        "latitude": 39.168212890625,
+        "longitude": -86.533149719238,
+        "state": "IN",
+        "street": "216 N Walnut St"
+      } }'
+      
+
+curl -i -v http://localhost:5000/api/v1/event/15/chat
+      
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/event/29/chat/ -d '{"user_id":5, "full_name":"full_name","profile_picture":"profile_picture", "timestamp":"timestamp","text":"text","media_file":"media_file"}'
+
+
+curl -i -v "Content-type: application/json" GET http://localhost:5000/api/v1/event/15/attending
+
+
+
+curl -i -v -H "Content-type: application/json" -X POST http://localhost:5000/v1/event/ -d \
+'{"id":0,"end_time_display":"Fri Jul 22 2016 at 11:30 am","event_id":"1826432640912901","event_url":"http://allevents.in/bloomington/sleeping-bag-jared-zoltar-of-the-zoltars-at-bloomington-guitar-and-amp/1826432640912901","eventname":"Sleeping Bag + Jared Zoltar (of The Zoltars) at Bloomington Guitar and Amp","location":"Bloomington Guitar &amp; Amp","owner_id":"10155538020475529","share_url":"http://allevents.in/bloomington/1826432640912901","start_time_display":"Fri Jul 22 2016 at 11:30 am","date":"Fri Jul 22 2016 11:30 am","banner_url":"https://cdn-az.allevents.in/banners/c88c169e4468fba607da8e61c491f717","cover_image":"https://cdn-az.allevents.in/banners/c88c169e4468fba607da8e61c491f717","venue":{"city":"Bloomington","country":"United States","full_address":"Bloomington Guitar &amp; Amp, 521 W Kirkwood Ave, Unit 1, Bloomington, United States","latitude":"39.166645050049","longitude":"-86.539642333984","state":"IN","street":"521 W Kirkwood Ave, Unit 1"},"thumb_url_large":"https://cdn-az.allevents.in/banners/fbe68e7a9776edc24ff945a245a131e2","venuename":"Bloomington Guitar &amp; Amp"}'
+
+
+
+
+curl -i -v -H "Content-type: application/json" -X POST https://vigeo.azurewebsites.net/tables/alleventsmodel?zumo-api-version=2.0.0 -d \
+'{"id":0,"end_time_display":"Fri Jul 22 2016 at 11:30 am","event_id":"1826432640912901","event_url":"http://allevents.in/bloomington/sleeping-bag-jared-zoltar-of-the-zoltars-at-bloomington-guitar-and-amp/1826432640912901","eventname":"Sleeping Bag + Jared Zoltar (of The Zoltars) at Bloomington Guitar and Amp","location":"Bloomington Guitar &amp; Amp","owner_id":"10155538020475529","share_url":"http://allevents.in/bloomington/1826432640912901","start_time_display":"Fri Jul 22 2016 at 11:30 am","date":"Fri Jul 22 2016 11:30 am","banner_url":"https://cdn-az.allevents.in/banners/c88c169e4468fba607da8e61c491f717","cover_image":"https://cdn-az.allevents.in/banners/c88c169e4468fba607da8e61c491f717","venue":{"city":"Bloomington","country":"United States","full_address":"Bloomington Guitar &amp; Amp, 521 W Kirkwood Ave, Unit 1, Bloomington, United States","latitude":"39.166645050049","longitude":"-86.539642333984","state":"IN","street":"521 W Kirkwood Ave, Unit 1"},"thumb_url_large":"https://cdn-az.allevents.in/banners/fbe68e7a9776edc24ff945a245a131e2","venuename":"Bloomington Guitar &amp; Amp"}'
+
+
+
+
+
+curl -i -v -H "Content-type: application/json" -X POST https://vigeo.azurewebsites.net/tables/alleventsmodel?zumo-api-version=2.0.0 -d \
+'{
+      "event_id": "308688826162313",
+      "eventname": "Live From Bloomington Free Concert",
+      "owner_id": "122315071118437",
+      "start_time": 1474394400,
+      "start_time_display": "Tue Sep 20 2016 at 06:00 pm",
+      "end_time": 1474394400,
+      "end_time_display": "Tue Sep 20 2016 at 06:00 pm",
+      "location": "Indiana Memorial Union",
+      "venue": {
+        "street": "900 E 7th St",
+        "city": "Bloomington",
+        "state": "IN",
+        "country": "United States",
+        "latitude": 39.16780090332,
+        "longitude": -86.523597717285,
+        "full_address": "Indiana Memorial Union, 900 E 7th St, Bloomington, United States"
+      },
+      "event_url": "http://allevents.in/bloomington/live-from-bloomington-free-concert/308688826162313",
+      "share_url": "http://allevents.in/bloomington/308688826162313",
+      "banner_url": "https://cdn-az.allevents.in/banners/5be66b457e5725d96368d6dd4f7a0e13",
+      "categories": [
+        "Concerts",
+        "Entertainment",
+        "Music"
+      ],
+      "tags": [
+        "Bloomington",
+        "Union",
+        "Americana",
+        "Concert"
+      ]
+    }'
+
+curl -i -v -H "Content-type: application/json" -X POST https://vigeo.azurewebsites.net/tables/alleventsmodel?zumo-api-version=2.0.0 -d \
+'{
+      "event_id": "308688826162313",
+      "eventname": "Live From Bloomington Free Concert",
+      "owner_id": "122315071118437",
+      "start_time": 1474394400,
+      "start_time_display": "Tue Sep 20 2016 at 06:00 pm",
+      "end_time": 1474394400,
+      "end_time_display": "Tue Sep 20 2016 at 06:00 pm",
+      "location": "Indiana Memorial Union",
+      "venue": {
+        "street": "900 E 7th St",
+        "city": "Bloomington",
+        "state": "IN",
+        "country": "United States",
+        "latitude": 39.16780090332,
+        "longitude": -86.523597717285,
+        "full_address": "Indiana Memorial Union, 900 E 7th St, Bloomington, United States"
+      },
+      "event_url": "http://allevents.in/bloomington/live-from-bloomington-free-concert/308688826162313",
+      "share_url": "http://allevents.in/bloomington/308688826162313",
+      "banner_url": "https://cdn-az.allevents.in/banners/5be66b457e5725d96368d6dd4f7a0e13"
+          
+}'
